@@ -57,6 +57,7 @@ enum PrimaryKey {
 impl<'a> PrimaryKeyPlanner<'a> {
     fn select(&self, outer_context: Option<Rc<Context<'a>>>, select: Select) -> Select {
         let current_context = self.update_context(None, &select.from.relation);
+        let _test = Ok(current_context);
         let current_context = select
             .from
             .joins
